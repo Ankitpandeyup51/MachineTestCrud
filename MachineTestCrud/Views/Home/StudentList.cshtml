@@ -1,0 +1,58 @@
+﻿
+@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<h2>Show All Student Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Password</th>
+            <th>Dob</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Rows.Count > 0)
+        {
+            foreach (System.Data.DataRow Student in Model.Rows)
+            {
+                <tr>
+                    <td>@Student["Id"]</td>
+                    <td>@Student["Name"]</td>
+                    <td>@Student["Email"]</td>
+                    <td>@Student["Department"]</td>
+                    <td>@Student["Password"]</td>
+                    <td>
+                        @(Student["Dob"] != DBNull.Value
+                            ? Convert.ToDateTime(Student["Dob"]).ToString("yyyy-MM-dd")
+                            : "")
+                    </td>
+                    <td>@Student["Address"]</td>
+                    <td>
+                        @Html.ActionLink("Update", "Update",
+                            new { Id = Student["Id"] })
+
+                        @Html.ActionLink("Delete", "Delete",
+                            new { Id = Student["Id"] })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">No Student Found</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+
+
+
+<html>
+
+<head>
+    <title>Student</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post">
+
+        <h1>Registration Form</h1>
+        <label class="form-label">Id:</label>
+        <input class="form-control" type="number" name="Id" placeholder="Enter Your Id" />
+        <label class="form-label">Name:</label>
+        <input class="form-control" type="text" name="name" placeholder="Enter Your Name" />
+        <label class="form-label">Email:</label>
+        <input class="form-control" type="email" name="email" placeholder="Enter Your Email" />
+        <label class="form-label">Department:</label>
+        <input class="form-control" type="Department" name="Department" placeholder="Enter Your Department" />
+        @*   <label class="form-label">Password:</label>
+        <input class="form-control" name="password" placeholder="Enter Your Password" /> *@
+        <label>Password:</label>
+        <input class="form-control" type="password" name="Password" placeholder="Enter Your Password" />
+        <label class="form-label">Dob:</label>
+        <input class="form-control" type="date" name="Dob" />
+        <label class="form-label">Address:</label>
+        <input class="form-control" name="Address" placeholder="Enter Your Address">
+        <input class="btn btn-primary" type="submit" value="Submit" />
+        <input class="btn btn-info" type="reset" value="Reset" />
+    </form>
+</body>
+</html>
+
+
+
+
+
+

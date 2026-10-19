@@ -1,0 +1,233 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewBag.Title - My Student Portal</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        /* Navbar */
+        .custom-navbar {
+            background: #172554;
+            padding: 12px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+            .custom-navbar .navbar-brand {
+                color: #fff;
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.3px;
+            }
+
+        .brand-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 8px;
+            border-radius: 10px;
+            background: #38bdf8;
+            color: #172554;
+            font-size: 22px;
+            vertical-align: middle;
+        }
+
+        .custom-navbar .navbar-nav {
+            align-items: center;
+        }
+
+        .custom-navbar .nav-link {
+            color: #e2e8f0 !important;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 13px !important;
+            margin: 0 2px;
+            border-radius: 7px;
+            transition: all 0.25s ease;
+        }
+
+            .custom-navbar .nav-link:hover,
+            .custom-navbar .nav-link:focus {
+                color: #38bdf8 !important;
+                background: rgba(255, 255, 255, 0.09);
+            }
+
+        /* Login Button */
+        .custom-navbar .login-link {
+            background: #38bdf8;
+            color: #172554 !important;
+            font-weight: 700;
+            padding: 10px 22px !important;
+            margin-left: 8px;
+            border-radius: 7px;
+        }
+
+            .custom-navbar .login-link:hover {
+                background: #fff;
+                color: #172554 !important;
+            }
+
+        /* Mobile Toggle */
+        .custom-navbar .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 7px;
+            padding: 7px 10px;
+        }
+
+            .custom-navbar .navbar-toggler:focus {
+                box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            }
+
+        /* Main content */
+        .body-content {
+            padding-top: 30px;
+            min-height: 75vh;
+        }
+
+        footer {
+            color: #64748b;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        @@media (max-width: 767.98px) {
+            .custom-navbar .navbar-nav {
+                align-items: stretch;
+                padding-top: 12px;
+            }
+
+            .custom-navbar .nav-link {
+                margin: 3px 0;
+            }
+
+            .custom-navbar .login-link {
+                display: inline-block;
+                width: fit-content;
+                margin: 8px 0 4px;
+            }
+        }
+
+        @@media (max-width: 380px) {
+            .custom-navbar .navbar-brand {
+                font-size: 18px;
+            }
+
+            .brand-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark custom-navbar">
+        <div class="container">
+
+            <a class="navbar-brand"
+               href="@Url.Action("Index", "Home")">
+                <span class="brand-icon">&#127891;</span>My Student Portal
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Home", "Index", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link" }
+                        )
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "About", "About", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link" }
+                        )
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Contact", "Contact", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link" }
+                        )
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Registration", "Registration", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link" }
+                        )
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Show Details", "StudentList", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link" }
+                        )
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Login", "Login", "Home",
+                            new { area = "" },
+                            new { @class = "nav-link login-link" }
+                        )
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+
+        @RenderBody()
+
+        <hr />
+
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year - My Student Portal Deleoped By : Ankit Pandey
+            </p>
+        </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

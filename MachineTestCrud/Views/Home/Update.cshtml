@@ -1,0 +1,73 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "Update";
+    System.Data.DataRow row = null;
+
+    if (Model != null && Model.Rows.Count > 0)
+    {
+        row = Model.Rows[0];
+    }
+}
+
+<html>
+<head>
+    <title>Update Student</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1> Edit Registration Form</h1>
+
+        @if (row != null)
+        {
+            <form method="post" action="@Url.Action("Update", "Home")">
+
+                <label>Id:</label>
+                <input class="form-control" type="number"
+                       name="Id" value="@row["Id"]" readonly />
+
+                <label>Name:</label>
+                <input class="form-control" type="text"
+                       name="Name" value="@row["Name"]" />
+
+                <label>Email:</label>
+                <input class="form-control" type="email"
+                       name="Email" value="@row["Email"]" />
+
+                <label>Department:</label>
+                <input class="form-control" type="text"
+                       name="Department" value="@row["Department"]" />
+
+            @* <label>Password:</label>
+                <input class="form-control" type="password"
+                       name="Password" value="@row["Password"]" /> *@
+                
+                <label>Password:</label>
+                <input class="form-control"
+                       type="password"
+                       name="Password"
+                       value="@row["Password"]" />
+
+                <label>DOB:</label>
+                <input class="form-control" type="date"
+                       name="Dob"
+                       value="@(row["Dob"] == DBNull.Value ? "" : Convert.ToDateTime(row["Dob"]).ToString("yyyy-MM-dd"))" />
+
+                <label>Address:</label>
+                <input class="form-control" type="text"
+                       name="Address" value="@row["Address"]" />
+
+                <br />
+
+                <input class="btn btn-primary" type="submit" value="Update" />
+                <input class="btn btn-info" type="reset" value="Reset" />
+            </form>
+        }
+        else
+        {
+            <p class="text-danger">No Student Record Found</p>
+        }
+    </div>
+</body>
+</html>
