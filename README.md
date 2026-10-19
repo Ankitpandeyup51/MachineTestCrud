@@ -75,7 +75,8 @@ If you find this project useful for learning ASP.NET MVC and SQL Server, conside
 
 
 
-➕ Registration From
+## ✨ Features Registration From
+
 
 <img width="958" height="507" alt="Screenshot 2026-10-19 202145" src="https://github.com/user-attachments/assets/4c120b8e-7037-4515-a838-2d1cc2fc7341" />
 
@@ -83,14 +84,14 @@ If you find this project useful for learning ASP.NET MVC and SQL Server, conside
 <img width="949" height="508" alt="Screenshot 2026-10-19 202235" src="https://github.com/user-attachments/assets/7267bd13-567b-4bd6-bfdf-b9e988ce335a" />
 
 
-➕ Login From
+## ✨ Features Login From
 
 
 
 <img width="959" height="505" alt="Screenshot 2026-10-19 202415" src="https://github.com/user-attachments/assets/f91f28ff-e598-4275-87b0-78c620be8008"/>
 
 
-➕ Show Details
+## ✨ Features Show Details
 
 
 <img width="947" height="500" alt="Screenshot 2026-10-19 202433" src="https://github.com/user-attachments/assets/39f763f2-012a-49b7-9450-0078934de60e" />
